@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 const pathENV = path.resolve(__dirname, './.env');
 
@@ -11,6 +12,8 @@ if (fs.existsSync(pathENV)) {
 }
 
 const app = require('./app/app');
+
+app.use(cors());
 
 const port = process.env.PORT || 3001;
 
