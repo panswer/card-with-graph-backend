@@ -4,8 +4,6 @@ services:
   app:
     container_name: card_with_graph
     build: .
-    environment:
-      - PORT=3000
     labels:
       - "traefik.enable=true" # <== Enable traefik to proxy this container
       - "traefik.http.routers.card-graph.rule=Host(`card-graph.mytestingenlocal.ml`)" # <== Your Domain Name for the https rule
